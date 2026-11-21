@@ -32,10 +32,15 @@ methodologies, important performance
 metrics, and limitations of
 simulation-based research.
 
-The discussion is literature-based.
-No original simulation experiments
-or measured performance results
-are presented in this paper.
+ This section primarily presents a
+literature-based technical review.
+In addition, a simplified Python-based
+illustrative experiment is included
+to demonstrate the relationship between
+vehicle density and selected
+communication performance metrics.
+The experiment does not implement
+a complete VANET protocol stack.
 
 \subsection{Simulation-Based VANET Research}
 \label{sec:4A}
@@ -867,6 +872,121 @@ the importance of transparent
 methodologies, careful result
 interpretation, and validation
 where practical \cite{Sommer2011}.
+
+
+\subsection{Illustrative Python-Based VANET Simulation}
+\label{sec:python_vanet}
+
+To complement the literature-based review,
+a simplified Python-based experiment was
+implemented to illustrate the relationship
+between vehicle density and communication
+performance in a VANET environment.
+
+\subsubsection{Simulation Setup}
+
+The experiment was implemented using
+Python 3.13 with NumPy and Matplotlib.
+
+Vehicles were randomly positioned along
+a one-dimensional road of length 1000 m.
+The communication range was fixed at 250 m.
+
+Five vehicle densities were evaluated:
+10, 20, 30, 40, and 50 vehicles.
+Each vehicle generated 100 packets,
+with a randomly selected destination.
+
+Packet delivery was determined using
+a simplified probabilistic model based
+on communication distance and vehicle count.
+
+Packets sent to destinations beyond
+the communication range were considered lost.
+
+The experiment used a fixed random seed
+of 42 to support reproducibility.
+
+This model does not implement actual
+IEEE 802.11p channel access, mobility,
+routing protocols, or wireless interference.
+It is intended for educational illustration
+rather than realistic network prediction.
+
+\subsubsection{Experimental Results}
+
+Table~\ref{tab:python_results}
+presents the results obtained from
+the Python experiment.
+
+\begin{table}[htbp]
+\centering
+\caption{Results of the Simplified Python VANET Experiment}
+\label{tab:python_results}
+\footnotesize
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Vehicles} &
+\textbf{PDR (\%)} &
+\textbf{Delay (ms)} \\
+\hline
+10 & 30.90 & 15.33 \\
+20 & 37.20 & 21.09 \\
+30 & 28.43 & 25.65 \\
+40 & 21.80 & 30.50 \\
+50 & 24.04 & 35.97 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{Figures/vanet_pdr.png}
+\caption{Packet delivery ratio for different
+vehicle counts in the simplified model.}
+\label{fig:python_pdr}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{Figures/vanet_delay.png}
+\caption{Estimated average delay for different
+vehicle counts in the simplified model.}
+\label{fig:python_delay}
+\end{figure}
+
+\subsubsection{Results Discussion}
+
+As shown in Fig.~\ref{fig:python_pdr},
+the packet delivery ratio fluctuated
+between 21.80\% and 37.20\%.
+
+These variations reflect the random
+vehicle positions, communication range,
+and assumed packet success probabilities.
+
+The results should not be interpreted
+as measurements of an actual VANET
+routing protocol.
+
+Fig.~\ref{fig:python_delay} shows
+that the estimated average delay
+increased from 15.33 ms to 35.97 ms.
+
+This increase is primarily explained
+by the model's predefined delay formula,
+which includes a term proportional
+to the number of vehicles.
+
+Therefore, the experiment demonstrates
+the behavior of the selected mathematical
+assumptions rather than independently
+measuring real network congestion.
+
+The experiment provides a reproducible
+educational example of performance
+evaluation concepts discussed in
+the reviewed VANET literature.
 
 \subsection{Discussion}
 \label{sec:4H}

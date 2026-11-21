@@ -150,6 +150,7 @@ perspective.
 The specific objectives are:
 
 \begin{enumerate}
+
 \item To examine the fundamental
 architecture of VANETs and
 the functions of On-Board Units
@@ -180,13 +181,22 @@ performance evaluation metrics.
 \item To discuss important
 technical trade-offs and
 future research directions.
+
+\item To implement a simplified
+Python-based illustrative experiment
+examining the relationship between
+vehicle density, packet delivery ratio,
+and average communication delay.
+
 \end{enumerate}
 
 \subsection{Scope and Review Methodology}
 
 This paper adopts a
 literature-based technical
-review approach.
+review approach, complemented
+by a simplified Python-based
+illustrative experiment.
 
 Its scope includes
 VANET architectures,
@@ -227,23 +237,54 @@ of vehicle movement
 and communication
 behavior \cite{Sommer2011}.
 
-This paper reviews
-existing simulation
-approaches and
-performance metrics.
-It does not claim
-original simulation
-experiments or
-newly measured
-performance results.
+In addition to reviewing existing
+simulation approaches and performance
+metrics, this paper includes a
+simplified Python-based illustrative
+experiment.
+
+The experiment considers five vehicle
+counts ranging from 10 to 50, with
+vehicles randomly positioned along
+a one-dimensional road of length 1000 m.
+A fixed communication range of 250 m
+is used, and each vehicle generates
+100 packets.
+
+A simplified probabilistic
+communication model estimates
+packet delivery ratio and average
+communication delay under different
+vehicle counts.
+
+The results are presented through
+a numerical table and two graphical
+visualizations.
+
+The experiment uses Python 3.13,
+NumPy, and Matplotlib, with a fixed
+random seed to support reproducibility.
+
+The experiment does not implement
+realistic vehicle mobility, a complete
+wireless protocol stack, IEEE 802.11p
+channel access, or established VANET
+routing protocols.
+
+Therefore, the generated results
+illustrate the behavior of the
+selected mathematical assumptions
+rather than providing real-world
+VANET performance measurements.
 
 \subsection{Contributions of This Paper}
 
-The contribution of
-this paper is a
-structured synthesis
-of important VANET
-research topics.
+The main contribution of
+this paper is a structured
+synthesis of important VANET
+research topics, complemented
+by an illustrative computational
+experiment.
 
 First, it examines
 the relationship
@@ -268,7 +309,7 @@ reliability as
 interconnected
 design challenges.
 
-Finally, it reviews
+Fourth, it reviews
 simulation frameworks
 and performance metrics
 and discusses how
@@ -276,6 +317,21 @@ experimental assumptions
 can influence the
 interpretation of
 VANET research.
+
+Finally, it presents a
+reproducible Python-based
+illustrative experiment
+that evaluates packet
+delivery ratio and
+average communication
+delay for different
+vehicle counts.
+
+The experiment complements
+the literature review by
+demonstrating how simplified
+modeling assumptions influence
+performance evaluation results.
 
 \subsection{Organization of the Paper}
 
@@ -290,8 +346,11 @@ Section~III discusses routing protocols,
 vehicular applications, and major
 technical challenges.
 
-Section~IV reviews simulation frameworks
-and performance evaluation metrics.
+Section~IV reviews simulation frameworks,
+performance evaluation metrics, and
+presents a simplified Python-based
+illustrative experiment with numerical
+and graphical results.
 
 Section~V presents a comparative analysis
 of published studies and routing approaches.

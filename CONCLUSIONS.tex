@@ -66,6 +66,44 @@ consistent simulation assumptions,
 realistic mobility models, and clearly
 defined evaluation metrics.
 
+To complement the literature review,
+a simplified Python-based illustrative
+experiment was implemented to examine
+packet delivery ratio (PDR) and average
+communication delay under different
+vehicle counts.
+
+The experiment evaluated five scenarios
+with 10, 20, 30, 40, and 50 vehicles
+using a simplified probabilistic
+communication model.
+
+The generated PDR values ranged from
+21.80\% to 37.20\%, while the estimated
+average communication delay increased
+from 15.33 ms for 10 vehicles to
+35.97 ms for 50 vehicles.
+
+The results were presented using a
+numerical table and two graphical
+visualizations, illustrating how
+changes in vehicle count can influence
+the performance indicators produced
+by the selected model.
+
+However, these results are dependent
+on the assumptions and mathematical
+rules used in the experiment.
+The implementation does not include
+realistic vehicle mobility, detailed
+wireless channel behavior, or
+established VANET routing protocols.
+Therefore, the results should be
+interpreted as an educational
+illustration rather than validated
+measurements of real-world
+vehicular network performance.
+
 Furthermore, the evolution of vehicular
 communication technologies was examined
 through IEEE 802.11p-based systems,
@@ -113,18 +151,31 @@ can improve the reliability and
 comparability of findings reported
 across different studies.
 
-As this paper is a literature-based
-review, it does not present original
-simulation experiments or claim
-newly measured performance results.
-Instead, its contribution lies in
-organizing established research,
-comparing important technical
-approaches, and identifying
-limitations and open research
-directions.
+Future work may also extend the
+illustrative Python experiment by
+integrating realistic vehicle
+mobility using SUMO and detailed
+wireless network simulation using
+NS-3 or OMNeT++.
 
-Overall, VANETs provide a foundation
+Such an extension could support
+more realistic investigations of
+packet delivery, communication
+delay, channel congestion, and
+routing protocol performance
+under different traffic conditions.
+
+Overall, this paper combines a
+structured literature-based review
+with a reproducible illustrative
+Python experiment. Its contribution
+lies in organizing established
+research, comparing important
+technical approaches, identifying
+open challenges, and demonstrating
+basic performance evaluation concepts.
+
+VANETs provide a foundation
 for increasingly connected
 transportation systems. Their
 successful development will depend
